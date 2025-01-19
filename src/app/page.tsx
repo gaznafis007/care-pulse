@@ -1,12 +1,22 @@
+'use client'
 import Image from "next/image";
 import logo from "../assets/logo.png";
 import welcome from "../assets/login-illustration.png";
 import InputField from "@/components/InputField/InputField";
 import Button from "@/components/Button/Button";
+import { useState } from "react";
+import Modal from "@/components/Modal/Modal";
 
 export default function Home() {
+  const [open, setOpen] = useState(false)
+  const handleSubmit = (event) =>{
+    event.preventDefault()
+    console.log('handling');
+    setOpen(true)
+  }
   return (
-    <main className="relative">
+    <>
+      <main className="relative">
       {/* logo */}
       <div className="flex flex-row space-x-2 text-white items-center pl-16 mt-12">
         <Image alt="logo" src={logo} width={40} height={40} />
@@ -23,7 +33,7 @@ export default function Home() {
             <InputField label={'Email Address'} labelClass={'text-lg text-slate-300'} className={'bg-slate-800'} name={'email'} type={'email'} placeholder={'e.g. johndoe@gmail.com'}/>
             <InputField label={'Phone Number'} labelClass={'text-lg text-slate-300'} className={'bg-slate-800'} name={'phone'} type={'text'} placeholder={'e.g. 012 xxxxxxxx'}/>
             <div className="flex flex-col mt-12">
-            <Button className={'block'}> Get Started</Button>
+            <Button handler={handleSubmit} className={'block'}> Get Started</Button>
             </div>
           </form>
         </div>
@@ -39,6 +49,12 @@ export default function Home() {
         </div>
       </div>
       <p className="absolute pl-16 -bottom-12 md:bottom-2 text-slate-400">@carpulse copywrite</p>
+      {
+      open && (<Modal>
+      <h1 className="text-white text-4xl text center">Hello</h1>
+    </Modal>)
+    }
     </main>
+    </>
   );
 }
