@@ -21,7 +21,7 @@ export default function Home() {
           <form className="flex flex-col pr-16 space-y-4">
             <InputField label={'Full Name'} labelClass={'text-lg text-slate-300'} className={'bg-slate-800'} name={'name'} type={'text'} placeholder={'e.g. Enter your full name'}/>
             <InputField label={'Email Address'} labelClass={'text-lg text-slate-300'} className={'bg-slate-800'} name={'email'} type={'email'} placeholder={'e.g. johndoe@gmail.com'}/>
-            <InputField label={'Phone Number'} labelClass={'text-lg text-slate-300'} className={'bg-slate-800'} name={'phone'} type={'text'} placeholder={'e.g. 012xxxxxxxx'}/>
+            <InputField label={'Phone Number'} labelClass={'text-lg text-slate-300'} className={'bg-slate-800'} name={'phone'} type={'text'} placeholder={'e.g. 012 xxxxxxxx'}/>
             <div className="flex flex-col mt-12">
             <Button className={'block'}> Get Started</Button>
             </div>
