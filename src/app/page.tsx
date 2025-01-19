@@ -6,13 +6,17 @@ import InputField from "@/components/InputField/InputField";
 import Button from "@/components/Button/Button";
 import { useState } from "react";
 import Modal from "@/components/Modal/Modal";
+import { useRouter } from "next/navigation";
+
 
 export default function Home() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
+  const router = useRouter()
   const handleSubmit = (event) =>{
     event.preventDefault()
     console.log('handling');
-    setOpen(true)
+    setOpen(true);
+    router.push('/register')
   }
   return (
     <>
