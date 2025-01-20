@@ -1,9 +1,14 @@
 import React from 'react';
+import logo from '../../assets/logo.png'
+import Image from 'next/image';
 
 const Register = () => {
     return (
         <div>
-            <h1 className="text-6xl text-center">This is register</h1>
+            <div className="flex flex-row space-x-4">
+                <Image src={logo} alt='company-logo' width={40} height={40}/>
+                <p className="text-2xl font-semibold">CarePulse</p>
+            </div>
         </div>
     );
 };
