@@ -21,7 +21,7 @@ const Register = () => {
               alt="capsule-image"
               width={720}
               height={320}
-              className="w-full"
+              className="hidden md:w-full "
             />
           </div>
       </div>
